@@ -1,0 +1,47 @@
+Field,Description,Preprocessing,Standardization
+ID,This is unique variable in both the dataframes,Not required,Already consists unique values
+hotelcode,It contains only 8470 unique values which is about 27%,Not required,Already consists unique values
+hotelid,this column basically contains the id of the hotel,Not required,Already consists unique values
+websitecode,the website code column has no null values and it is highly correlated with status and propertytype,Not required,Already consists unique values
+hotel name,this column especially talks about the name of the hotel in the ireland,convert the name into lower case. removal of special character,normalizing the hotel name into standard format
+Address,this address column states the where the particular hotel is located,Handle the missing values may be we can impute the values since there is only 49. else we can replace the null values with 'unknown value',normalizing it to the standard format
+city,In this column the it contains only 1336 unique values where the most of the hotels located in one or more cities,Handling the missing values by imputing,normalizing it to the standard format
+state,In the state column we have about 98% records,There is no missing values and preprocessing includes removal of punctuation marks,normalize to standard format
+countrycode,to talk about country code we have filtered only one country that is ireland,not required,not required
+zip code,It is a feature used in foriegn countries to deliver the mail faster,Since there is a lot of missing values we could drop the column else we could map with the cities and impute the null values accordingly,There is particular format for zip code according to their cities
+latitude,this latitude region will show only the latitude of the region in ireland,not required,Already consists unique values
+longitude,this is similar to latitude but it contains 8521 unique values,not required,Already consists unique values
+status,this columns shows whether these hotels are active or not by indicating 1 to show it is active and 0 to show it is inactive,not required,It is already standardized
+propertytype,this column tell about wether the property is a hotel or apartments or hostel or guest house and so on,There is no missing values and removal of punction marks are necessary,Should be with in a range
+rating,the rating column has only 10 uniques values which ranges from 1-5 with the interval of 0.5,"Here handling missing values is required, but then we cannot give rating based on mode that would be inappropriate",not required
+larberterm,"This column has no values so, it is difficult to know what actually larbarterm refers to",This field is not required better you can drop the column,not required
+reviewscount,This column basically means the counts of the review and it also contains 99% of the null values,Better to drop the column,not required
+website rates,which is basically contains only 1 value due to the filteration of ireland data,not required,not required
+dtcollected,This might be the dates that is the data collected on,"Convert to a standard date format (e.g., YYYY-MM-DD)",not required
+los,this value is based on the fileteration may be,not required,not required
+guests,this value is based on the fileteration may be,not required,not required
+room type,This is column talks about the type of rooms that the hotels have,Handle the missing values by imputing,Covert to the standard format
+on site rate,this speaks about the rate of the site whcih have 1140 distinct values and 4803 missing values,The missing values should be handled by imputing the values,Can be normalized to a standard scale(eg.1-100)
+net rate,net rate has a huge impact on the hotels growth,There is a huge null values. It cannot be imputed as well,Can be normalize to a standard scale(eg 0-100)
+currency,currency is basicaly here represents the currency used in ireland,not required,not required
+room amenities,This is clear that it talks about the facilities in the hotels or apartments or any kinda property,Handle the missing values by imputing but however it wouldn't be fine. The punctuation and stop words has to be removed,not required
+occupany,this column is about how many people can be accomodated within that property,Not Required,wihtin a scale of 1-4
+ispromo,I guess it might talk about the promocode for the discounts,not required,not required
+closed,This columns talks about whether the property is open or closed,Not required,not required
+checkin,This data is collected on the date 13.10.2024 so there is only one value in this column,Not Required,not required
+checkout,This datais also collected on the date 14.10.2024,Not Required,not required
+discount,It speaks about whether there is any discount for the people who are booking on the particular date,need to handle the null value by providing it as 0,not required
+promo name,"It tells about the promo code like new propert deal , last escape deal and so on",These promo name is a unique contraints and the missing values has to imputed by maping with discount or amenities,Convert it into a standard format
+status code,It usually speaks about whether the promo are active,not required,not required
+taxstatus,It is all about tax for th no.of people staying in the hotels,not required,Should  set a scale limit
+taxtype,"amount plus, taxes and fee  for staying only fee and taxes",While encoding we could make a label encoder.should handle missing values,not required
+taxamount,the tax amount is mostly between 10-20 and most of the taxes are between the earlier mentioned range and few are between 20 -50 and rarely above 60,better this can be drioped else we could make some calculation and fix it,not required
+pos,I don't understand about this pos might be it talks about the position,Not Required,Not Required
+proxy used,There are nearly 100 unique proxy used to get the data from the websites,confused,not required
+is rate per stay,This column shows that whether there is rate included per stay,The missing values has to be handled,not required
+meal plan,This is important feature to note because if there is anything like no meal provided poeple need to search for the restaurant to have their meal,IT has to be preprocessed in such a way that if breakfast is provided it should be encoded as 1 .. likewise for other,not required if it is encode properly
+optional extras,This has NO value and it is difficult to find what is signifies,It is better to drop the column,not required
+payplan,this also the same. there is no plan given for any of the records,Good to drop the column,not required
+ref id,ref id signifies that there is any referal id for a paricular stay or property,may be this could be mapped with the promo code or discount and make some calculations out of it,not required
+hotelid rates,this column has a large no seems to be the rate of the hotel id,confused,not required
+min stay,this column has only one value as 1. most probably seems to be minimum no.of people can stay,missing values has to be handled or replace with ones,not required
